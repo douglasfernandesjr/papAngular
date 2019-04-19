@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoloListComponent } from './bolo/bolo-list/bolo-list.component';
+import { PaisesModule } from './paises/paises.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BoloListComponent } from './bolo/bolo-list/bolo-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    PaisesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

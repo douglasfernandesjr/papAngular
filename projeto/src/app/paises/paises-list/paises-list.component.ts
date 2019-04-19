@@ -10,9 +10,16 @@ export class PaisesListComponent implements OnInit {
 
   Paises: Array<Pais>;
 
-  constructor() { }
+  constructor() {
+
+
+  }
 
   ngOnInit() {
+    this.Paises = [
+      new Pais('Brasil', 'BRA'),
+      new Pais('Portugal', 'PT')
+    ];
   }
 
   public eventoCallback(dados: Pais) {

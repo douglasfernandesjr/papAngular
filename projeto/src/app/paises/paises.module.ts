@@ -7,7 +7,6 @@ import { PaisDisplayComponent } from './pais-display/pais-display.component';
   declarations: [PaisesListComponent, PaisDisplayComponent],
   imports: [
     CommonModule
-  ],
-  exports: [PaisesListComponent]
+  ]
 })
 export class PaisesModule { }

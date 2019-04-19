@@ -14,8 +14,7 @@ import { PaisesModule } from './paises/paises.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    PaisesModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

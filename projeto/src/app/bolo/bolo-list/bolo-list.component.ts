@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class BoloListComponent implements OnInit {
 
   lista: string[];
+  novo: string;
   showOne: boolean;
 
   constructor() {
     this.showOne = false;
-   }
+  }
 
   ngOnInit() {
-    this.lista =  ['Cenoura', 'Leite Ninho', 'Chocolate'];
-   }
+    this.lista = ['Cenoura', 'Leite Ninho', 'Chocolate'];
+  }
 
+  clickNovo() {
+    if (this.novo !== undefined && this.novo.trim().length > 0) {
+      this.lista.push(this.novo);
+      this.novo = '';
+    }
+  }
 }

@@ -1,7 +1,11 @@
 <p>
   bolo-list works!
 </p>
-<input type="checkbox" [(ngModel)]="showOne" > Show One
+<div>
+  <input  type="text" [disabled]="showOne" [(ngModel)]="novo"/>
+  <button [disabled]="showOne" (click)="clickNovo()">Adicionar</button>
+</div>
+<input type="checkbox" [(ngModel)]="showOne"/> Exibir somente o primeiro?
 <ul *ngIf="showOne">
   <h3>
     {{lista[0]}}
@@ -12,5 +16,3 @@
     {{item}}
   </li>
 </ul>
-
-<button [disabled]="showOne">Salvar</button>

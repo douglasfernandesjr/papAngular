@@ -1,0 +1,7 @@
+<div class="col">
+  <ul>
+    <li *ngFor="let item of Paises">
+      <app-pais-display [pais]="item" (notificacao)="eventoCallback($event)"></app-pais-display>
+    </li>
+  </ul>
+</div>

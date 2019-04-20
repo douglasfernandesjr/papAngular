@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TemplateDriveComponent } from './template-drive/template-drive.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModelDriveComponent } from './model-drive/model-drive.component';
 
 @NgModule({
-  declarations: [TemplateDriveComponent],
+  declarations: [TemplateDriveComponent, ModelDriveComponent],
   imports: [
-    CommonModule, FormsModule
+    CommonModule, FormsModule, ReactiveFormsModule
   ],
-  exports: [TemplateDriveComponent]
+  exports: [TemplateDriveComponent, ModelDriveComponent]
 })
 export class CadastrosModule { }

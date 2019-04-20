@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pais } from '../pais';
+import { PesquisaPaisesService } from '../pesquisa-paises.service';
 
 @Component({
   selector: 'app-paises-list',
@@ -8,22 +9,33 @@ import { Pais } from '../pais';
 })
 export class PaisesListComponent implements OnInit {
 
+  /* Propriedades listagem por idioma */
+  lista: string[];
+  lang: string;
+
   Paises: Array<Pais>;
 
-  constructor() {
-
-
+  constructor(private apiRequest: PesquisaPaisesService) {
+    this.lista = [];
+    this.lang = 'pt';
   }
 
   ngOnInit() {
-    this.Paises = [
-      new Pais('Brasil', 'BRA'),
-      new Pais('Portugal', 'PT')
-    ];
+    this.atualizarListaPaisesPorIdioma();
   }
 
   public eventoCallback(dados: Pais) {
     alert('Click no pais: ' + dados.nome);
   }
 
+  public atualizarListaPaisesPorIdioma() {
+    this.lista = [];
+    this.apiRequest.ListarPaises(this.lang).subscribe(
+      (respostaAPI) => {
+        for (const item of respostaAPI) {
+          this.lista.push(item.name);
+        }
+      }
+    );
+  }
 }

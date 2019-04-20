@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BoloListComponent } from './bolo/bolo-list/bolo-list.component';
 import { PaisesModule } from './paises/paises.module';
 import { PagLayoutComponent } from './pag-layout/pag-layout.component';
+import { CadastrosModule } from './cadastros/cadastros.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PagLayoutComponent } from './pag-layout/pag-layout.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PaisesModule
+    PaisesModule,
+    CadastrosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

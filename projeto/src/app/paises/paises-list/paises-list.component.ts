@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Pais } from '../pais';
 import { PesquisaPaisesService } from '../pesquisa-paises.service';
+import { FormControl } from '@angular/forms';
+import {
+  debounceTime, distinctUntilChanged, filter,
+  catchError, switchMap,
+} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-paises-list',
@@ -13,7 +19,10 @@ export class PaisesListComponent implements OnInit {
   lista: string[];
   lang: string;
 
-  Paises: Array<Pais>;
+  /* Propriedades listagem por região*/
+  term = new FormControl(); /*Reactive Forms */
+  semResultado = false;
+  paises: Array<Pais>;
 
   constructor(private apiRequest: PesquisaPaisesService) {
     this.lista = [];
@@ -22,6 +31,35 @@ export class PaisesListComponent implements OnInit {
 
   ngOnInit() {
     this.atualizarListaPaisesPorIdioma();
+
+    /*Configurar o observable*/
+    this.term.valueChanges
+      .pipe(
+        filter(term => term.length > 3),
+        debounceTime(400),
+        distinctUntilChanged(),
+        switchMap(
+          (term) => {
+            return this.apiRequest.ListarPaisesPorContinente(term)
+              .pipe(
+                catchError((e, c) => {
+                  this.semResultado = true;
+                  return [];
+                })
+              );
+          }
+        ),
+      ).subscribe(paises => {
+        if (paises != null) {
+          this.semResultado = false;
+          this.paises = [];
+          for (const p of paises) {
+            this.paises.push(new Pais(p.name, p.alpha3Code));
+          }
+        } else {
+          this.semResultado = true;
+        }
+      });
   }
 
   public eventoCallback(dados: Pais) {

@@ -14,6 +14,7 @@ const routes: Routes = [{
     { path: 'paises', component: PaisesListComponent },
     { path: 'templateform', component: TemplateDriveComponent },
     { path: 'modelform', component: ModelDriveComponent },
+    { path: 'adm', loadChildren: './admin/admin.module#AdminModule' },
   ]
 }];
 

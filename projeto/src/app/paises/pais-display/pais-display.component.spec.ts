@@ -24,7 +24,7 @@ describe('PaisDisplayComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
+  it('should create with value', () => {
     component.pais = new Pais('Brasil', 'BR');
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

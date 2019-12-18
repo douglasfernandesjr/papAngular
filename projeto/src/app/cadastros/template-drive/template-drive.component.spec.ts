@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplateDriveComponent } from './template-drive.component';
+import { FormsModule } from '@angular/forms';
 
 describe('TemplateDriveComponent', () => {
   let component: TemplateDriveComponent;
@@ -8,7 +9,8 @@ describe('TemplateDriveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TemplateDriveComponent ]
+      declarations: [ TemplateDriveComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   }));

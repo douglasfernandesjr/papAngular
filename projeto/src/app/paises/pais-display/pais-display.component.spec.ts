@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaisDisplayComponent } from './pais-display.component';
+import { Pais } from '../pais';
 
 describe('PaisDisplayComponent', () => {
   let component: PaisDisplayComponent;
@@ -8,9 +9,9 @@ describe('PaisDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaisDisplayComponent ]
+      declarations: [PaisDisplayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +22,12 @@ describe('PaisDisplayComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create', () => {
+    component.pais = new Pais('Brasil', 'BR');
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('span').textContent).toContain('Brasil / BR');
   });
 });

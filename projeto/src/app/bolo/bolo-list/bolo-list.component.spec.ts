@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BoloListComponent } from './bolo-list.component';
+import { FormsModule } from '@angular/forms';
 
 describe('BoloListComponent', () => {
   let component: BoloListComponent;
@@ -8,7 +9,8 @@ describe('BoloListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoloListComponent ]
+      declarations: [ BoloListComponent ],
+      imports:[FormsModule]
     })
     .compileComponents();
   }));

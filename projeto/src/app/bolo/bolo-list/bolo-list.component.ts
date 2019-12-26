@@ -11,7 +11,7 @@ export class BoloListComponent implements OnInit {
   novo: string;
   showOne: boolean;
 
-  constructor(private boloStore: BoloStoreService) {
+  constructor(public boloStore: BoloStoreService) {
     this.showOne = false;
   }
 

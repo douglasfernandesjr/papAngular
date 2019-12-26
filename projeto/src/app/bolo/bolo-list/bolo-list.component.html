@@ -8,11 +8,11 @@
 <input type="checkbox" [(ngModel)]="showOne"/> Exibir somente o primeiro?
 <ul *ngIf="showOne">
   <h3>
-    {{lista[0]}}
+    {{(boloStore.listaBolos$ | async)[0]}}
   </h3>
 </ul>
 <ul *ngIf="!showOne">
-  <li *ngFor="let item of lista">
+  <li *ngFor="let item of boloStore.listaBolos$ | async">
     {{item}}
   </li>
 </ul>

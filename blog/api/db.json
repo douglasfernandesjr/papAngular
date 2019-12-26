@@ -1,0 +1,11 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Postagem Original",
+            "author": "Douglas",
+            "image": "https://www.statnews.com/wp-content/uploads/2019/08/AdobeStock_182445295-645x645.jpeg",
+            "text": "Texto principal da imagem"
+        }
+    ]
+}

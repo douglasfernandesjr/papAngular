@@ -1,3 +1,6 @@
-<div class="blog-item" *ngFor="let item of store.state$ | async">
+<div class="blog-item" *ngFor="let item of list">
     <app-post-simple-display [post]="item"></app-post-simple-display>
 </div>
+
+<mat-progress-spinner *ngIf="loading" color="primary" mode="indeterminate">
+</mat-progress-spinner>

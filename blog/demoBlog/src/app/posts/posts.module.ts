@@ -7,27 +7,40 @@ import { PostFullDisplayComponent } from './components/post-full-display/post-fu
 import { PostsHomePageComponent } from './pages/posts-home-page/posts-home-page.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
 import { PostStoreService } from './services/post-store.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PostAddFormComponent } from './components/post-add-form/post-add-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     PostSimpleDisplayComponent,
     PostFullDisplayComponent,
     PostsHomePageComponent,
-    PostPageComponent],
+    PostPageComponent,
+    PostAddFormComponent],
   exports: [
     PostsHomePageComponent,
-    PostPageComponent],
+    PostPageComponent,
+    PostAddFormComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     PostsRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [PostStoreService]
 })

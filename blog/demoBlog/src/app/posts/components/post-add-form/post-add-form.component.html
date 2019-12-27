@@ -1,0 +1,21 @@
+<form class="form-group" [formGroup]="pageForm">
+    <mat-form-field>
+        <input matInput type="number" placeholder="id" formControlName="id">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="author" formControlName="author">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="url" placeholder="image" formControlName="image">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="text" formControlName="text"></textarea>
+    </mat-form-field>
+
+
+</form>    
+<button (click)="save()">Save</button>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { PostStoreService } from 'src/app/posts/services/post-store.service';
 
 @Component({
   selector: 'app-menu-pag-layout',
@@ -16,6 +17,13 @@ export class MenuPagLayoutComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  posts = 0;
+  constructor(private breakpointObserver: BreakpointObserver,
+              store: PostStoreService
+  ) {
+
+    store.state$.subscribe(data => this.posts = data.length);
+
+  }
 
 }

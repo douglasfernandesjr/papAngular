@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar >Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/" routerLinkActive="active">Home</a>
       <a mat-list-item routerLink="/add" routerLinkActive="active">New Post</a>
@@ -19,7 +19,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Blog</span>
+      <span [matBadge]="posts" matBadgeOverlap="false" matBadgeColor="accent">Blog</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

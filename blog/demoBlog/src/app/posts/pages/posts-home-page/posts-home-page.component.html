@@ -1,0 +1,3 @@
+<div class="blog-item" *ngFor="let item of store.state$ | async">
+    <app-post-simple-display [post]="item"></app-post-simple-display>
+</div>

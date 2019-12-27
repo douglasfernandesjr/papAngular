@@ -6,6 +6,13 @@
             "author": "Douglas",
             "image": "https://www.statnews.com/wp-content/uploads/2019/08/AdobeStock_182445295-645x645.jpeg",
             "text": "Texto principal da imagem"
+        },
+        {
+            "id": 1,
+            "title": "Postagem Original 2 ",
+            "author": "Mariana",
+            "image": "https://www.statnews.com/wp-content/uploads/2019/08/AdobeStock_182445295-645x645.jpeg",
+            "text": "Texto principal da postagem 2"
         }
     ]
 }
